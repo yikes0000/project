@@ -4,7 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>減塑小助手</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- CSS -->
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; }
+    .navbar { display: flex; justify-content: space-between; align-items: center; background: #2c3e50; padding: 10px 20px; position: fixed; width: 100%; top: 0; z-index: 1000; }
+    .navbar ul { list-style: none; display: flex; gap: 20px; }
+    .navbar a { color: #fff; text-decoration: none; }
+    .navbar a:hover { color: #f39c12; }
+    .logo { color: #fff; font-weight: bold; }
+    .menu-toggle { display: none; font-size: 24px; color: #fff; cursor: pointer; }
+
+    .hero { background: url('https://source.unsplash.com/1600x900/?nature,eco') no-repeat center center/cover; color: #fff; text-align: center; padding: 120px 20px; }
+    .hero button { background: #f39c12; border: none; padding: 10px 20px; cursor: pointer; }
+    .hero button:hover { background: #d35400; }
+
+    .cards { display: flex; justify-content: center; gap: 20px; padding: 80px 20px; flex-wrap: wrap; }
+    .card { background: #ecf0f1; padding: 20px; border-radius: 8px; text-align: center; width: 250px; transition: transform 0.3s; }
+    .card:hover { transform: translateY(-10px); }
+
+    .calculator { background: #ecf0f1; padding: 40px 20px; text-align: center; }
+    .calculator input { padding: 10px; width: 200px; margin: 10px; }
+    .calculator button { background: #27ae60; color: #fff; border: none; padding: 10px 20px; cursor: pointer; }
+    .calculator button:hover { background: #1e8449; }
+    #result { margin-top: 20px; font-weight: bold; }
+
+    footer { background: #2c3e50; color: #fff; text-align: center; padding: 20px; }
+    footer .social a { color: #fff; margin: 0 10px; }
+    footer .social a:hover { color: #f39c12; }
+
+    #backToTop { position: fixed; bottom: 30px; right: 30px; background: #f39c12; border: none; padding: 10px; border-radius: 50%; cursor: pointer; display: none; }
+    #backToTop i { color: #fff; }
+
+    /* 響應式設計 */
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      .navbar ul { flex-direction: column; background: #34495e; position: absolute; top: 50px; right: 0; display: none; width: 200px; }
+      .navbar ul.show { display: flex; }
+      .cards { flex-direction: column; align-items: center; }
+    }
+  </style>
   <!-- 引入 Font Awesome icon -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
@@ -12,10 +50,12 @@
   <!-- 導覽列 -->
   <nav class="navbar">
     <div class="logo">減塑小助手</div>
+    <span class="menu-toggle"><i class="fas fa-bars"></i></span>
     <ul>
       <li><a href="#home">首頁</a></li>
       <li><a href="#about">關於我們</a></li>
       <li><a href="#tips">減塑技巧</a></li>
+      <li><a href="#calculator">碳足跡計算機</a></li>
       <li><a href="#contact">聯絡</a></li>
     </ul>
   </nav>
@@ -46,6 +86,15 @@
     </div>
   </section>
 
+  <!-- 碳足跡計算機 -->
+  <section class="calculator" id="calculator">
+    <h2>碳足跡計算機</h2>
+    <p>輸入你使用的塑膠產品數量，看看排放多少碳足跡！</p>
+    <input type="number" id="plasticCount" placeholder="輸入數量">
+    <button onclick="calculateCarbon()">計算</button>
+    <div id="result"></div>
+  </section>
+
   <!-- Footer -->
   <footer id="contact">
     <p>© 2026 減塑小助手 | 聯絡我們：info@example.com</p>
@@ -59,8 +108,38 @@
   <!-- 回到頂端按鈕 -->
   <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
 
-  <script src="script.js"></script>
+  <!-- JS -->
+  <script>
+    // 回到頂端按鈕
+    const backToTop = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        backToTop.style.display = "block";
+      } else {
+        backToTop.style.display = "none";
+      }
+    });
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // 漢堡選單
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".navbar ul");
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+
+    // 碳足跡計算機 (假設每個塑膠產品平均排放 0.1 公斤 CO2)
+    function calculateCarbon() {
+      const count = document.getElementById("plasticCount").value;
+      if (count && count > 0) {
+        const carbon = (count * 0.1).toFixed(2);
+        document.getElementById("result").innerText = `估算碳排放量：約 ${carbon} 公斤 CO2`;
+      } else {
+        document.getElementById("result").innerText = "請輸入有效的數字！";
+      }
+    }
+  </script>
 </body>
 </html>
-
-
