@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
+  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>減塑小助手</title>
@@ -146,6 +147,40 @@
     });
 
     // 碳排放計算機
-    function calculateCarbon() {
-      // 使用你提供的換算
+   function calculateCarbon() {
+  // 讀取數值（若為空則視為 0）
+  const classroom = Number(document.getElementById('classroom').value) || 0;
+  const computerClass = Number(document.getElementById('computerClass').value) || 0;
+  const outdoorClass = Number(document.getElementById('outdoorClass').value) || 0;
+  const mobile = Number(document.getElementById('mobile').value) || 0;
+  const meatMeal = Number(document.getElementById('meatMeal').value) || 0;
+  const vegMeal = Number(document.getElementById('vegMeal').value) || 0;
+  const computer = Number(document.getElementById('computer').value) || 0;
+
+  // 範例換算係數（單位：kg CO2e / 小時 或 / 餐）
+  const FACTORS = {
+    classroom: 0.02,      // 一般教室每小時示例係數
+    computerClass: 0.05,  // 電腦教室每小時
+    outdoorClass: 0.01,   // 戶外課程每小時
+    mobile: 0.01,         // 手機使用每小時
+    meatMeal: 2.5,        // 葷食每餐
+    vegMeal: 0.8,         // 素食每餐
+    computer: 0.06        // 電腦使用每小時
+  };
+
+  // 計算總碳排
+  const total =
+    classroom * FACTORS.classroom +
+    computerClass * FACTORS.computerClass +
+    outdoorClass * FACTORS.outdoorClass +
+    mobile * FACTORS.mobile +
+    meatMeal * FACTORS.meatMeal +
+    vegMeal * FACTORS.vegMeal +
+    computer * FACTORS.computer;
+
+  // 顯示結果（保留兩位小數）
+  const resultEl = document.getElementById('result');
+  resultEl.textContent = `估計碳排放：${total.toFixed(2)} kg CO₂e`;
+}
+
        
