@@ -1,19 +1,24 @@
+```html
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>減塑小助手</title>
   <meta name="description" content="減塑小助手：減少塑膠、計算碳排放、分享減塑技巧。">
   <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body>
-  <nav class="navbar">
-    <div class="logo">減塑小助手</div>
-    <button class="menu-toggle" aria-expanded="false" aria-label="切換選單">
+<body style="background:#f0fbf2;">
+
+  <!-- 導覽列（內嵌少量 inline style 以確保顏色與靠左排列） -->
+  <nav class="navbar" style="background:#0b6b3a; justify-content:flex-start; gap:24px;">
+    <div class="logo" style="color:#fff; font-weight:bold; margin-right:8px;">減塑小助手</div>
+
+    <button class="menu-toggle" aria-expanded="false" aria-label="切換選單" style="margin-left:auto;">
       <i class="fas fa-bars" aria-hidden="true"></i>
     </button>
+
     <ul>
       <li><a href="#home">首頁</a></li>
       <li><a href="#about">關於我們</a></li>
@@ -24,78 +29,89 @@
   </nav>
 
   <main>
-    <!-- Hero 區塊（注意：h1 顏色會由 CSS 控制） -->
-<section class="hero" id="home">
-  <h1 class="hero-title">一起為永續生活努力！</h1>
-  <p>減少塑膠，守護地球 🌍</p>
-  <a class="hero-btn" href="https://globalgoals.tw/12-responsible-consumption-and-production" target="_blank" rel="noopener">了解更多</a>
-</section>
+    <!-- Hero 區塊 -->
+    <section class="hero" id="home" style="padding:120px 20px; text-align:center; background: url('https://source.unsplash.com/1600x900/?nature,eco') no-repeat center center/cover;">
+      <h1 class="hero-title" style="color:#000; margin:0 0 12px;">一起為永續生活努力！</h1>
+      <p style="color:#fff; text-shadow: 0 1px 2px rgba(0,0,0,0.3);">減少塑膠，守護地球 🌍</p>
+      <a class="hero-btn" href="https://globalgoals.tw/12-responsible-consumption-and-production" target="_blank" rel="noopener" style="display:inline-block; margin-top:12px; background:#f39c12; color:#fff; padding:10px 20px; border-radius:4px; text-decoration:none;">了解更多</a>
+    </section>
 
-   <!-- 卡片式內容（每張卡片新增了解更多按鈕） -->
-<section class="cards" id="tips">
-  <div class="card">
-    <i class="fas fa-recycle fa-2x" aria-hidden="true"></i>
-    <h3>重複使用</h3>
-    <p>攜帶環保袋、保溫杯，減少一次性塑膠。</p>
-    <a class="card-btn" href="https://globalgoals.tw/12-responsible-consumption-and-production" target="_blank" rel="noopener">了解更多</a>
-  </div>
-  <div class="card">
-    <i class="fas fa-leaf fa-2x" aria-hidden="true"></i>
-    <h3>綠色生活</h3>
-    <p>選擇天然材質產品，支持永續品牌。</p>
-    <a class="card-btn" href="https://globalgoals.tw/12-responsible-consumption-and-production" target="_blank" rel="noopener">了解更多</a>
-  </div>
-  <div class="card">
-    <i class="fas fa-lightbulb fa-2x" aria-hidden="true"></i>
-    <h3>源頭減量</h3>
-    <p>減少一次用產品的使用，從源頭減少廢棄物的產生量</p>
-    <a class="card-btn" href="https://globalgoals.tw/12-responsible-consumption-and-production" target="_blank" rel="noopener">了解更多</a>
-  </div>
-</section>
+    <!-- 卡片式內容（每張 card 使用 inline 背景色以確保立即生效） -->
+    <section class="cards" id="tips" style="display:flex; justify-content:center; gap:20px; padding:80px 20px; flex-wrap:wrap;">
+      <div class="card" style="background:#eaf9ef; padding:20px; border-radius:8px; text-align:center; width:250px; transition:transform 0.3s;">
+        <i class="fas fa-recycle fa-2x" aria-hidden="true" style="color:#0b6b3a;"></i>
+        <h3 style="margin-top:12px;">重複使用</h3>
+        <p>攜帶環保袋、保溫杯，減少一次性塑膠。</p>
+        <a class="card-btn" href="card1.html" style="display:inline-block; margin-top:12px; background:#0b6b3a; color:#fff; text-decoration:none; padding:8px 14px; border-radius:6px; font-weight:600;">了解更多</a>
+      </div>
 
-    <section class="calculator" id="calculator" aria-labelledby="calc-title">
-      <h2 id="calc-title">碳排放計算機</h2>
-      <div class="section">
-        <label for="classroom">一般教室(小時)</label>
-        <input type="number" id="classroom" value="0" min="0" step="0.1">
-        <label for="computerClass">電腦教室(小時)</label>
-        <input type="number" id="computerClass" value="0" min="0" step="0.1">
-        <label for="outdoorClass">戶外課程(小時)</label>
-        <input type="number" id="outdoorClass" value="0" min="0" step="0.1">
+      <div class="card" style="background:#eaf9ef; padding:20px; border-radius:8px; text-align:center; width:250px; transition:transform 0.3s;">
+        <i class="fas fa-leaf fa-2x" aria-hidden="true" style="color:#0b6b3a;"></i>
+        <h3 style="margin-top:12px;">綠色生活</h3>
+        <p>選擇天然材質產品，支持永續品牌。</p>
+        <a class="card-btn" href="card2.html" style="display:inline-block; margin-top:12px; background:#0b6b3a; color:#fff; text-decoration:none; padding:8px 14px; border-radius:6px; font-weight:600;">了解更多</a>
       </div>
-      <div class="section">
-        <label for="mobile">手機使用(小時)</label>
-        <input type="number" id="mobile" value="0" min="0" step="0.1">
+
+      <div class="card" style="background:#eaf9ef; padding:20px; border-radius:8px; text-align:center; width:250px; transition:transform 0.3s;">
+        <i class="fas fa-lightbulb fa-2x" aria-hidden="true" style="color:#0b6b3a;"></i>
+        <h3 style="margin-top:12px;">小改變大影響</h3>
+        <p>每天一點點努力，累積成巨大的改變。</p>
+        <a class="card-btn" href="card3.html" style="display:inline-block; margin-top:12px; background:#0b6b3a; color:#fff; text-decoration:none; padding:8px 14px; border-radius:6px; font-weight:600;">了解更多</a>
       </div>
-      <div class="section">
-        <label for="meatMeal">葷食(餐)</label>
-        <input type="number" id="meatMeal" value="0" min="0" step="1">
-        <label for="vegMeal">素食(餐)</label>
-        <input type="number" id="vegMeal" value="0" min="0" step="1">
+    </section>
+
+    <!-- 碳排放計算機 -->
+    <section class="calculator" id="calculator" style="background:#ecf0f1; padding:40px 20px; text-align:center; margin:40px auto; border-radius:8px; max-width:600px;">
+      <h2 style="margin-bottom:20px;">碳排放計算機</h2>
+
+      <div class="section" style="margin-bottom:20px; text-align:left;">
+        <label for="classroom">一般教室 (小時)</label>
+        <input type="number" id="classroom" value="0" min="0" step="0.1" style="padding:8px; width:100%; box-sizing:border-box;">
+        <label for="computerClass">電腦教室 (小時)</label>
+        <input type="number" id="computerClass" value="0" min="0" step="0.1" style="padding:8px; width:100%; box-sizing:border-box;">
+        <label for="outdoorClass">戶外課程 (小時)</label>
+        <input type="number" id="outdoorClass" value="0" min="0" step="0.1" style="padding:8px; width:100%; box-sizing:border-box;">
       </div>
-      <div class="section">
-        <label for="computer">電腦使用(小時)</label>
-        <input type="number" id="computer" value="0" min="0" step="0.1">
+
+      <div class="section" style="margin-bottom:20px; text-align:left;">
+        <label for="mobile">手機使用 (小時)</label>
+        <input type="number" id="mobile" value="0" min="0" step="0.1" style="padding:8px; width:100%; box-sizing:border-box;">
       </div>
-      <button class="calc-btn" id="calcBtn">計算</button>
-      <div id="result" role="status" aria-live="polite"></div>
+
+      <div class="section" style="margin-bottom:20px; text-align:left;">
+        <label for="meatMeal">葷食 (餐)</label>
+        <input type="number" id="meatMeal" value="0" min="0" step="1" style="padding:8px; width:100%; box-sizing:border-box;">
+        <label for="vegMeal">素食 (餐)</label>
+        <input type="number" id="vegMeal" value="0" min="0" step="1" style="padding:8px; width:100%; box-sizing:border-box;">
+      </div>
+
+      <div class="section" style="margin-bottom:20px; text-align:left;">
+        <label for="computer">電腦使用 (小時)</label>
+        <input type="number" id="computer" value="0" min="0" step="0.1" style="padding:8px; width:100%; box-sizing:border-box;">
+      </div>
+
+      <button class="calc-btn" id="calcBtn" style="background:#27ae60; color:#fff; border:none; padding:10px 20px; cursor:pointer; border-radius:4px;">計算</button>
+      <div id="result" role="status" aria-live="polite" style="margin-top:20px; font-weight:bold; text-align:center;"></div>
     </section>
   </main>
 
-  <footer id="contact">
-    <p>© 2026 減塑小助手 | 聯絡我們：info@example.com</p>
-    <div class="social" aria-hidden="false">
-      <a href="#" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-      <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-      <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <!-- Footer -->
+  <footer id="contact" style="background:#0b6b3a; color:#fff; text-align:center; padding:20px;">
+    <p style="margin:0;">© 2026 減塑小助手 | 聯絡我們：info@example.com</p>
+    <div class="social" style="margin-top:8px;">
+      <a href="#" aria-label="Facebook" style="color:#fff; margin:0 10px;"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Instagram" style="color:#fff; margin:0 10px;"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Twitter" style="color:#fff; margin:0 10px;"><i class="fab fa-twitter" aria-hidden="true"></i></a>
     </div>
   </footer>
 
-  <button id="backToTop" aria-label="回到頂端" title="回到頂端">
-    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  <!-- 回到頂端按鈕 -->
+  <button id="backToTop" aria-label="回到頂端" title="回到頂端" style="position:fixed; bottom:30px; right:30px; background:#f39c12; border:none; padding:10px; border-radius:50%; cursor:pointer; display:none;">
+    <i class="fas fa-arrow-up" style="color:#fff;"></i>
   </button>
 
   <script src="script.js" defer></script>
 </body>
 </html>
+```
 
