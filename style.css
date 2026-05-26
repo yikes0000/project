@@ -1,39 +1,48 @@
+/* 全站背景改為淺綠色 */
 body {
+  background: #f0fbf2; /* 淺綠色背景（可調） */
   margin: 0;
   font-family: Arial, sans-serif;
   line-height: 1.6;
 }
-
-/* 導覽列 */
+/* 導覽列：深綠色、靠左排列選單 */
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background: #2c3e50;
+  background: #0b6b3a; /* 深綠色（可調） */
   padding: 10px 20px;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
+  justify-content: flex-start; /* 讓 logo 與選單靠左排列 */
+  gap: 24px; /* logo 與選單之間的間距 */
 }
+/* 選單整組等距向左（靠近 logo），項目之間等距 */
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 28px; /* 選單項目之間的等距 */
   margin: 0;
   padding: 0;
+  align-items: center;
 }
+/* 選單連結樣式（白色文字） */
 .navbar a {
   color: #fff;
   text-decoration: none;
+  padding: 6px 4px;
 }
 .navbar a:hover {
   color: #f39c12;
 }
+/* Logo 保持在最左，選單緊接其右側 */
 .logo {
   color: #fff;
   font-weight: bold;
+  margin-right: 8px;
 }
+/* 漢堡按鈕位置微調（行動版） */
 .menu-toggle {
   display: none;
   background: transparent;
@@ -41,6 +50,7 @@ body {
   color: #fff;
   font-size: 24px;
   cursor: pointer;
+  margin-left: auto; /* 在桌面隱藏時不影響排列；行動版會顯示 */
 }
 
 /* Hero */
@@ -130,12 +140,21 @@ footer .social a:hover { color: #f39c12; }
 }
 #backToTop i { color: #fff; }
 
-/* Responsive */
+/* 行動版：讓漢堡按鈕顯示並把選單改為絕對定位 */
 @media (max-width: 768px) {
-  .menu-toggle { display: block; }
-  .navbar ul { flex-direction: column; background: #34495e; position: absolute; top: 50px; right: 0; display: none; width: 200px; padding: 10px; }
+  .menu-toggle { display: block; margin-left: auto; }
+  .navbar { padding: 10px 12px; }
+  .navbar ul { 
+    flex-direction: column;
+    background: #0b6b3a;
+    position: absolute;
+    top: 56px;
+    right: 12px;
+    display: none;
+    width: 200px;
+    gap: 12px;
+    padding: 12px;
+  }
   .navbar ul.show { display: flex; }
-  .cards { flex-direction: column; align-items: center; }
 }
-
 }
