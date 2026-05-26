@@ -53,6 +53,11 @@ body {
   margin-left: auto; /* 在桌面隱藏時不影響排列；行動版會顯示 */
 }
 
+/* Hero 主標題改為黑色 */
+.hero-title {
+  color: #000; /* 黑色字 */
+}
+
 /* Hero */
 .hero {
   background: url('https://source.unsplash.com/1600x900/?nature,eco') no-repeat center center/cover;
@@ -94,6 +99,20 @@ body {
 .card:hover {
   transform: translateY(-8px);
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+/* 卡片上的了解更多按鈕 */
+.card-btn {
+  display: inline-block;
+  margin-top: 12px;
+  background: #0b6b3a; /* 深綠色按鈕，可調 */
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.card-btn:hover {
+  background: #09562f;
 }
 
 /* Calculator */
