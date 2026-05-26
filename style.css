@@ -60,11 +60,13 @@ body {
   text-align: center;
   padding: 120px 20px;
 }
+/* Hero 的了解更多（若你想保留 hero 按鈕樣式） */
 .hero-btn {
+  display: inline-block;
   background: #f39c12;
-  border: none;
+  color: #fff;
+  text-decoration: none;
   padding: 10px 20px;
-  cursor: pointer;
   border-radius: 4px;
 }
 .hero-btn:hover {
@@ -79,16 +81,19 @@ body {
   padding: 80px 20px;
   flex-wrap: wrap;
 }
+/* 卡片背景改為淺綠色，並微調按鈕樣式 */
 .card {
-  background: #ecf0f1;
+  background: #eaf9ef; /* 淺綠色背景 */
   padding: 20px;
   border-radius: 8px;
   text-align: center;
   width: 250px;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 .card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
 /* Calculator */
