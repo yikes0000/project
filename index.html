@@ -1,57 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>減塑小助手</title>
-  <style>
-    body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; }
-    .navbar { display: flex; justify-content: space-between; align-items: center; background: #2c3e50; padding: 10px 20px; position: fixed; width: 100%; top: 0; z-index: 1000; }
-    .navbar ul { list-style: none; display: flex; gap: 20px; }
-    .navbar a { color: #fff; text-decoration: none; }
-    .navbar a:hover { color: #f39c12; }
-    .logo { color: #fff; font-weight: bold; }
-    .menu-toggle { display: none; font-size: 24px; color: #fff; cursor: pointer; }
-
-    .hero { background: url('https://source.unsplash.com/1600x900/?nature,eco') no-repeat center center/cover; color: #fff; text-align: center; padding: 120px 20px; }
-    .hero button { background: #f39c12; border: none; padding: 10px 20px; cursor: pointer; }
-    .hero button:hover { background: #d35400; }
-
-    .cards { display: flex; justify-content: center; gap: 20px; padding: 80px 20px; flex-wrap: wrap; }
-    .card { background: #ecf0f1; padding: 20px; border-radius: 8px; text-align: center; width: 250px; transition: transform 0.3s; }
-    .card:hover { transform: translateY(-10px); }
-
-    .calculator { background: #ecf0f1; padding: 40px 20px; text-align: center; margin: 40px auto; border-radius: 8px; max-width: 600px; }
-    .calculator h2 { margin-bottom: 20px; }
-    .section { margin-bottom: 20px; text-align: left; }
-    label { display: block; margin: 8px 0 4px; }
-    input { padding: 8px; width: 100%; }
-    button.calc-btn { background: #27ae60; color: #fff; border: none; padding: 10px 20px; cursor: pointer; border-radius: 4px; }
-    button.calc-btn:hover { background: #1e8449; }
-    #result { margin-top: 20px; font-weight: bold; text-align: center; }
-
-    footer { background: #2c3e50; color: #fff; text-align: center; padding: 20px; }
-    footer .social a { color: #fff; margin: 0 10px; }
-    footer .social a:hover { color: #f39c12; }
-
-    #backToTop { position: fixed; bottom: 30px; right: 30px; background: #f39c12; border: none; padding: 10px; border-radius: 50%; cursor: pointer; display: none; }
-    #backToTop i { color: #fff; }
-
-    @media (max-width: 768px) {
-      .menu-toggle { display: block; }
-      .navbar ul { flex-direction: column; background: #34495e; position: absolute; top: 50px; right: 0; display: none; width: 200px; }
-      .navbar ul.show { display: flex; }
-      .cards { flex-direction: column; align-items: center; }
-    }
-  </style>
+  <meta name="description" content="減塑小助手：減少塑膠、計算碳排放、分享減塑技巧。">
+  <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- 導覽列 -->
   <nav class="navbar">
     <div class="logo">減塑小助手</div>
-    <span class="menu-toggle"><i class="fas fa-bars"></i></span>
+    <button class="menu-toggle" aria-expanded="false" aria-label="切換選單">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
     <ul>
       <li><a href="#home">首頁</a></li>
       <li><a href="#about">關於我們</a></li>
@@ -61,126 +23,74 @@
     </ul>
   </nav>
 
-  <!-- Hero 區塊 -->
-  <section class="hero" id="home">
-    <h1>一起為永續生活努力！</h1>
-    <p>減少塑膠，守護地球 🌍</p>
-    <button>了解更多</button>
-  </section>
+  <main>
+    <section class="hero" id="home">
+      <h1>一起為永續生活努力！</h1>
+      <p>減少塑膠，守護地球 🌍</p>
+      <button class="hero-btn">了解更多</button>
+    </section>
 
-  <!-- 卡片式內容 -->
-  <section class="cards" id="tips">
-    <div class="card">
-      <i class="fas fa-recycle fa-2x"></i>
-      <h3>重複使用</h3>
-      <p>攜帶環保袋、保溫杯，減少一次性塑膠。</p>
-    </div>
-    <div class="card">
-      <i class="fas fa-leaf fa-2x"></i>
-      <h3>綠色生活</h3>
-      <p>選擇天然材質產品，支持永續品牌。</p>
-    </div>
-    <div class="card">
-      <i class="fas fa-lightbulb fa-2x"></i>
-      <h3>小改變大影響</h3>
-      <p>每天一點點努力，累積成巨大的改變。</p>
-    </div>
-  </section>
+    <section class="cards" id="tips">
+      <div class="card">
+        <i class="fas fa-recycle fa-2x" aria-hidden="true"></i>
+        <h3>重複使用</h3>
+        <p>攜帶環保袋、保溫杯，減少一次性塑膠。</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-leaf fa-2x" aria-hidden="true"></i>
+        <h3>綠色生活</h3>
+        <p>選擇天然材質產品，支持永續品牌。</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-lightbulb fa-2x" aria-hidden="true"></i>
+        <h3>小改變大影響</h3>
+        <p>每天一點點努力，累積成巨大的改變。</p>
+      </div>
+    </section>
 
-  <!-- 碳排放計算機 -->
-  <section class="calculator" id="calculator">
-    <h2>碳排放計算機</h2>
-    <div class="section">
-      <label>一般教室 (小時)</label>
-      <input type="number" id="classroom" value="0">
-      <label>電腦教室 (小時)</label>
-      <input type="number" id="computerClass" value="0">
-      <label>戶外課程 (小時)</label>
-      <input type="number" id="outdoorClass" value="0">
-    </div>
-    <div class="section">
-      <label>手機使用 (小時)</label>
-      <input type="number" id="mobile" value="0">
-    </div>
-    <div class="section">
-      <label>葷食 (餐)</label>
-      <input type="number" id="meatMeal" value="0">
-      <label>素食 (餐)</label>
-      <input type="number" id="vegMeal" value="0">
-    </div>
-    <div class="section">
-      <label>電腦使用 (小時)</label>
-      <input type="number" id="computer" value="0">
-    </div>
-    <button class="calc-btn" onclick="calculateCarbon()">計算</button>
-    <div id="result"></div>
-  </section>
+    <section class="calculator" id="calculator" aria-labelledby="calc-title">
+      <h2 id="calc-title">碳排放計算機</h2>
+      <div class="section">
+        <label for="classroom">一般教室 小時</label>
+        <input type="number" id="classroom" value="0" min="0" step="0.1">
+        <label for="computerClass">電腦教室 小時</label>
+        <input type="number" id="computerClass" value="0" min="0" step="0.1">
+        <label for="outdoorClass">戶外課程 小時</label>
+        <input type="number" id="outdoorClass" value="0" min="0" step="0.1">
+      </div>
+      <div class="section">
+        <label for="mobile">手機使用 小時</label>
+        <input type="number" id="mobile" value="0" min="0" step="0.1">
+      </div>
+      <div class="section">
+        <label for="meatMeal">葷食 餐</label>
+        <input type="number" id="meatMeal" value="0" min="0" step="1">
+        <label for="vegMeal">素食 餐</label>
+        <input type="number" id="vegMeal" value="0" min="0" step="1">
+      </div>
+      <div class="section">
+        <label for="computer">電腦使用 小時</label>
+        <input type="number" id="computer" value="0" min="0" step="0.1">
+      </div>
+      <button class="calc-btn" id="calcBtn">計算</button>
+      <div id="result" role="status" aria-live="polite"></div>
+    </section>
+  </main>
 
-  <!-- Footer -->
   <footer id="contact">
     <p>© 2026 減塑小助手 | 聯絡我們：info@example.com</p>
-    <div class="social">
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
+    <div class="social" aria-hidden="false">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
     </div>
   </footer>
 
-  <!-- 回到頂端按鈕 -->
-  <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
+  <button id="backToTop" aria-label="回到頂端" title="回到頂端">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
 
-  <script>
-    // 回到頂端按鈕
-    const backToTop = document.getElementById("backToTop");
-    window.addEventListener("scroll", () => {
-      backToTop.style.display = window.scrollY > 200 ? "block" : "none";
-    });
-    backToTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+  <script src="script.js" defer></script>
+</body>
+</html>
 
-    // 漢堡選單
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".navbar ul");
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("show");
-    });
-
-    // 碳排放計算機
-   function calculateCarbon() {
-  // 讀取數值（若為空則視為 0）
-  const classroom = Number(document.getElementById('classroom').value) || 0;
-  const computerClass = Number(document.getElementById('computerClass').value) || 0;
-  const outdoorClass = Number(document.getElementById('outdoorClass').value) || 0;
-  const mobile = Number(document.getElementById('mobile').value) || 0;
-  const meatMeal = Number(document.getElementById('meatMeal').value) || 0;
-  const vegMeal = Number(document.getElementById('vegMeal').value) || 0;
-  const computer = Number(document.getElementById('computer').value) || 0;
-
-  // 範例換算係數（單位：kg CO2e / 小時 或 / 餐）
-  const FACTORS = {
-    classroom: 0.02,      // 一般教室每小時示例係數
-    computerClass: 0.05,  // 電腦教室每小時
-    outdoorClass: 0.01,   // 戶外課程每小時
-    mobile: 0.01,         // 手機使用每小時
-    meatMeal: 2.5,        // 葷食每餐
-    vegMeal: 0.8,         // 素食每餐
-    computer: 0.06        // 電腦使用每小時
-  };
-
-  // 計算總碳排
-  const total =
-    classroom * FACTORS.classroom +
-    computerClass * FACTORS.computerClass +
-    outdoorClass * FACTORS.outdoorClass +
-    mobile * FACTORS.mobile +
-    meatMeal * FACTORS.meatMeal +
-    vegMeal * FACTORS.vegMeal +
-    computer * FACTORS.computer;
-
-  // 顯示結果（保留兩位小數）
-  const resultEl = document.getElementById('result');
-  resultEl.textContent = `估計碳排放：${total.toFixed(2)} kg CO₂e`;
-}
-
-       
