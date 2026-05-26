@@ -58,6 +58,14 @@ body {
   color: #000; /* 黑色字 */
 }
 
+/* Hero 副標題（淺綠背景上顯示黑色） */
+.hero-subtitle {
+  color: #000;            /* 黑色文字 */
+  text-shadow: none;      /* 移除陰影 */
+  margin-top: 8px;
+}
+
+
 /* Hero */
 .hero {
   background: url('https://source.unsplash.com/1600x900/?nature,eco') no-repeat center center/cover;
