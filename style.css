@@ -20,6 +20,8 @@ body {
   list-style: none;
   display: flex;
   gap: 20px;
+  margin: 0;
+  padding: 0;
 }
 .navbar a {
   color: #fff;
@@ -32,25 +34,34 @@ body {
   color: #fff;
   font-weight: bold;
 }
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
 
-/* Hero 區塊 */
+/* Hero */
 .hero {
   background: url('https://source.unsplash.com/1600x900/?nature,eco') no-repeat center center/cover;
   color: #fff;
   text-align: center;
   padding: 120px 20px;
 }
-.hero button {
+.hero-btn {
   background: #f39c12;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
+  border-radius: 4px;
 }
-.hero button:hover {
+.hero-btn:hover {
   background: #d35400;
 }
 
-/* 卡片式內容 */
+/* Cards */
 .cards {
   display: flex;
   justify-content: center;
@@ -70,22 +81,42 @@ body {
   transform: translateY(-10px);
 }
 
+/* Calculator */
+.calculator {
+  background: #ecf0f1;
+  padding: 40px 20px;
+  text-align: center;
+  margin: 40px auto;
+  border-radius: 8px;
+  max-width: 600px;
+}
+.calculator h2 { margin-bottom: 20px; }
+.section { margin-bottom: 20px; text-align: left; }
+label { display: block; margin: 8px 0 4px; }
+input { padding: 8px; width: 100%; box-sizing: border-box; }
+button.calc-btn, #calcBtn {
+  background: #27ae60;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+button.calc-btn:hover, #calcBtn:hover { background: #1e8449; }
+#result { margin-top: 20px; font-weight: bold; text-align: center; }
+
 /* Footer */
 footer {
   background: #2c3e50;
   color: #fff;
   text-align: center;
   padding: 20px;
+  margin-top: 40px;
 }
-footer .social a {
-  color: #fff;
-  margin: 0 10px;
-}
-footer .social a:hover {
-  color: #f39c12;
-}
+footer .social a { color: #fff; margin: 0 10px; }
+footer .social a:hover { color: #f39c12; }
 
-/* 回到頂端按鈕 */
+/* Back to top */
 #backToTop {
   position: fixed;
   bottom: 30px;
@@ -97,25 +128,14 @@ footer .social a:hover {
   cursor: pointer;
   display: none;
 }
-#backToTop i {
-  color: #fff;
+#backToTop i { color: #fff; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+  .navbar ul { flex-direction: column; background: #34495e; position: absolute; top: 50px; right: 0; display: none; width: 200px; padding: 10px; }
+  .navbar ul.show { display: flex; }
+  .cards { flex-direction: column; align-items: center; }
 }
 
-/* 響應式設計 */
-@media (max-width: 768px) {
-  .navbar ul {
-    flex-direction: column;
-    background: #34495e;
-    position: absolute;
-    top: 50px;
-    right: 0;
-    display: none;
-  }
-  .navbar ul.show {
-    display: flex;
-  }
-  .cards {
-    flex-direction: column;
-    align-items: center;
-  }
 }
