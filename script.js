@@ -25,7 +25,7 @@ function calculateCarbon() {
   const vegMeal = Number(document.getElementById('vegMeal').value) || 0;
   const computer = Number(document.getElementById('computer').value) || 0;
 
-  // 範例換算係數（請依實際來源替換）
+  // 換算係數
   const FACTORS = {
     classroom: 0.02,
     computerClass: 0.05,
@@ -45,9 +45,13 @@ function calculateCarbon() {
     vegMeal * FACTORS.vegMeal +
     computer * FACTORS.computer;
 
+  // 🌳 每棵樹每月可抵消 0.9 kg CO₂
+  const treesNeeded = total / 0.9;
+
   const resultEl = document.getElementById('result');
-  resultEl.textContent = `估計碳排放：${total.toFixed(2)} kg CO₂e`;
+  resultEl.textContent = `估計碳排放：${total.toFixed(2)} kg CO₂e，需要約 ${Math.ceil(treesNeeded)} 棵樹來抵消每月排放`;
 }
+
 
 // 綁定按鈕
 document.getElementById('calcBtn').addEventListener('click', calculateCarbon);
