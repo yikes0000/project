@@ -1,11 +1,18 @@
-// 回到頂端按鈕
-const backToTop = document.getElementById("backToTop");
-window.addEventListener("scroll", () => {
-  backToTop.style.display = window.scrollY > 200 ? "block" : "none";
+// 顯示/隱藏按鈕
+window.addEventListener("scroll", function() {
+  const btn = document.getElementById("backToTop");
+  if (window.scrollY > 200) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
 });
-backToTop.addEventListener("click", () => {
+
+// 點擊回到頂端
+document.getElementById("backToTop").addEventListener("click", function() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
 
 // 漢堡選單（可及性）
 const menuToggle = document.querySelector(".menu-toggle");
