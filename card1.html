@@ -1,31 +1,89 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>重複使用 - 減塑小助手</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+  <!-- 導覽列 -->
   <nav class="navbar">
     <div class="logo">減塑小助手</div>
-    <a class="back-home" href="index.html#tips">← 返回主頁</a>
+    <ul>
+      <li><a href="index.html#home">首頁</a></li>
+      <li><a href="index.html#tips">減塑技巧</a></li>
+      <li><a href="index.html#calculator">碳排放計算機</a></li>
+      <li><a href="index.html#contact">聯絡</a></li>
+    </ul>
   </nav>
 
-  <main style="padding:100px 20px 40px;">
-    <h1>重複使用</h1>
-    <p>在這裡補充「重複使用」的詳細內容、範例、資源與圖片。</p>
+  <!-- Hero 區塊 -->
+  <section class="hero">
+    <h1 class="hero-title">重複使用 ♻️</h1>
+    <p class="hero-subtitle">減塑生活，從「可重複使用」開始</p>
+    <a class="hero-btn" href="index.html">返回首頁</a>
+  </section>
 
-    <section>
-      <h2>實作建議</h2>
-      <ul>
-        <li>攜帶環保袋：建議尺寸、材質與清潔方式。</li>
-        <li>保溫杯與水壺：如何挑選與保養。</li>
-        <li>二手交換：社區交換平台與注意事項。</li>
-      </ul>
-    </section>
+  <!-- 主要內容 -->
+  <main style="padding:40px 20px; max-width:1000px; margin:auto; display:flex; gap:40px;">
+    
+    <!-- 文章目錄 -->
+    <aside style="flex:1; background:#f9f9f9; padding:20px; border-radius:8px;">
+      <h3>文章目錄</h3>
+      <ol>
+        <li><a href="#section1">外帶使用循環飲料杯</a></li>
+        <li><a href="#section2">循環共享餐盒容器</a></li>
+        <li><a href="#section3">自備水壺環保杯</a></li>
+        <li><a href="#section4">自備餐具</a></li>
+        <li><a href="#section5">自備購物袋或環保容器</a></li>
+        <li><a href="#section6">結語：拋棄式文化</a></li>
+        <li><a href="#section7">全球減塑行動</a></li>
+      </ol>
+    </aside>
 
-    <p><a class="card-btn" href="index.html#tips">回到卡片</a></p>
+    <!-- 文章內容 -->
+    <article style="flex:3;">
+      <h2 id="section1">外帶使用循環飲料杯</h2>
+      <p>外帶飲料時選擇循環杯，減少一次性塑膠杯的浪費。</p>
+
+      <h2 id="section2">循環共享餐盒容器</h2>
+      <p>外食時使用共享餐盒，降低免洗餐盒的使用。</p>
+
+      <h2 id="section3">自備水壺環保杯</h2>
+      <p>隨身攜帶水壺或環保杯，避免瓶裝水與塑膠杯。</p>
+
+      <h2 id="section4">自備餐具</h2>
+      <p>攜帶筷子、湯匙、叉子、吸管，減少免洗餐具。</p>
+
+      <h2 id="section5">自備購物袋或環保容器</h2>
+      <p>購物時自備環保袋或容器，避免塑膠袋。</p>
+
+      <h2 id="section6">結語：拋棄式文化</h2>
+      <p>「用完就丟」的文化需要改變，重複使用是關鍵。</p>
+
+      <h2 id="section7">全球減塑行動</h2>
+      <p>政府、企業與個人都需要共同支持減塑，才能守護地球。</p>
+    </article>
   </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 減塑小助手 | 聯絡我們：info@example.com</p>
+    <div class="social">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
+
+  <!-- 回到頂端按鈕 -->
+  <button id="backToTop" aria-label="回到頂端" title="回到頂端">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
