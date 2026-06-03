@@ -58,12 +58,13 @@ body {
 
 /* Hero 區塊 */
 .hero {
-  /* 刪除原本的背景，讓它透明，透出外層的大自然圖片 */
-  background: transparent;
+  /* 將原本的大自然背景與白色半透明遮罩，直接設定在 Hero 身上 */
+  background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1)), 
+              url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
   text-align: center;
-  padding: 120px 20px 20px; /* 稍微縮小下方的間距，讓卡片更緊湊 */
+  /* 恢復原本的 padding，讓上下留白較為寬裕 */
+  padding: 120px 20px; 
 }
-
 .hero-title {
   color: #000; 
   margin: 0 0 12px;
@@ -233,21 +234,6 @@ footer .social a:hover { color: #f39c12; }
   color: #0b6b3a;
 }
 
-/* ====== 貫穿 Hero 與 Cards 的大自然背景 ====== */
-.top-section-bg {
-  /* 我幫你找了一張極具質感的森林空拍圖 */
-  /* 並加上了 rgba(255,255,255, 0.4) 的白色半透明遮罩，這樣黑色字體才不會被吃掉，保持高易讀性 */
-  background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1)), 
-              url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
-  /* 如果圖片載入需要時間，先顯示深綠色底色 */
-  background-color: #0b6b3a; 
-}
-
-/* 確保卡片的背景在花俏的底圖上依舊清晰 */
-.cards .card {
-  /* 如果覺得卡片跟背景不搭，可以把卡片背景改成帶有透明度的白色，例如 rgba(255, 255, 255, 0.9) */
-  background: #eaf9ef; 
-}
 
 /* ====== 行動版 RWD ====== */
 /* ====== 行動版 RWD ====== */
