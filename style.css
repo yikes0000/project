@@ -247,3 +247,25 @@ footer .social a:hover { color: #f39c12; }
   margin-top: 0;
   color: #0b6b3a;
 }
+
+/* ====== 新增：導覽列右側 SDG 標籤 ====== */
+.nav-sdg {
+  margin-left: auto; /* 這個屬性會把它推到最右邊 */
+  background: #f39c12; /* 使用與按鈕相同的橘黃色 */
+  color: #fff;
+  font-weight: bold;
+  padding: 4px 12px;
+  border-radius: 20px; /* 做成藥丸般的圓角形狀 */
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+/* ====== 新增：Hero 區塊的 SDG 圖片 ====== */
+.hero-sdg-img {
+  display: block;
+  margin: 20px auto; /* 上下留白20px，左右置中 */
+  width: 120px; /* 控制圖片大小，不會過於突兀 */
+  height: auto;
+  border-radius: 8px; /* 加上一點圓角 */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* 加上淡淡的陰影讓圖片浮現出來 */
+}
