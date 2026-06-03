@@ -17,13 +17,13 @@ menuToggle.addEventListener("click", () => {
 
 // 碳排放計算機
 function calculateCarbon() {
-  const classroom = Number(document.getElementById('classroom').value)  0;
-  const computerClass = Number(document.getElementById('computerClass').value)  0;
-  const outdoorClass = Number(document.getElementById('outdoorClass').value)  0;
-  const mobile = Number(document.getElementById('mobile').value)  0;
-  const meatMeal = Number(document.getElementById('meatMeal').value)  0;
-  const vegMeal = Number(document.getElementById('vegMeal').value)  0;
-  const computer = Number(document.getElementById('computer').value) || 0;
+ const classroom = Number(document.getElementById('classroom').value) || 0;
+ const computerClass = Number(document.getElementById('computerClass').value) || 0;
+ const outdoorClass = Number(document.getElementById('outdoorClass').value) || 0;
+ const mobile = Number(document.getElementById('mobile').value) || 0;
+ const meatMeal = Number(document.getElementById('meatMeal').value) || 0;
+ const vegMeal = Number(document.getElementById('vegMeal').value) || 0;
+ const computer = Number(document.getElementById('computer').value) || 0;
 
   // 換算係數
   const FACTORS = {
@@ -49,7 +49,7 @@ function calculateCarbon() {
   const treesNeeded = total / 0.9;
 
   const resultEl = document.getElementById('result');
-  resultEl.textContent = 估計碳排放：${total.toFixed(2)} kg CO₂e，需要約 ${Math.ceil(treesNeeded)} 棵樹來抵消每月排放;
+  resultEl.textContent = `估計碳排放：${total.toFixed(2)} kg CO₂e，需要約 ${Math.ceil(treesNeeded)} 棵樹來抵消每月排放`;
 }
 
 
