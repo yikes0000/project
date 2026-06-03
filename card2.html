@@ -5,26 +5,67 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>綠色生活 - 減塑小助手</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  
   <nav class="navbar">
-    <div class="logo">減塑小助手</div>
-    <a class="back-home" href="index.html#tips">← 返回主頁</a>
+    <div class="logo" data-en="Eco Helper">減塑小助手</div>
+    <ul>
+      <li><a href="index.html#home" data-en="Home">首頁</a></li>
+      <li><a href="index.html#tips" data-en="Tips">減塑技巧</a></li>
+      <li><a href="index.html#calculator" data-en="Carbon Calc">碳排放計算機</a></li>
+      <li><a href="index.html#contact" data-en="Contact">聯絡</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <div class="nav-sdg">SDG 12</div>
+      <button id="langToggle" class="lang-btn">EN</button>
+      <button class="menu-toggle" aria-expanded="false" aria-label="切換選單">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+    </div>
   </nav>
 
+  <section class="hero">
+    <h1 class="hero-title" data-en="Green Living 🌿">綠色生活 🌿</h1>
+    <p class="hero-subtitle" data-en="Choose natural, support sustainability">選擇天然材質，支持永續理念</p>
+    <a class="hero-btn" href="index.html" data-en="Back to Home">返回首頁</a>
+  </section>
+
   <main class="page-main">
-    <h1>綠色生活</h1>
-    <p>在這裡補充「綠色生活」的詳細內容、品牌推薦、選購指南。</p>
+    
+    <img src="https://images.unsplash.com/photo-1605600659873-d808a13e4d2a?auto=format&fit=crop&w=1000&q=80" alt="綠色生活與環保產品" class="content-image">
 
-    <section>
-      <h2>推薦做法</h2>
-      <ol>
-        <li>選擇天然材質：列出常見材質與優缺點。</li>
-        <li>支持永續品牌：如何判斷與查證。</li>
-      </ol>
-    </section>
+    <article>
+      <h2 data-en="How to Build a Green Lifestyle?">如何打造綠色生活？</h2>
+      <p data-en="Green living is more than just a slogan; it's a mindful choice in our daily consumption. By rethinking our purchasing habits, we can significantly reduce the burden on our planet.">綠色生活不僅僅是一句口號，而是我們在日常消費中有意識的選擇。透過重新思考購物習慣，我們可以大幅減少地球的負擔。</p>
 
-    <p><a class="card-btn" href="index.html#tips">回到卡片</a></p>
+      <h3 data-en="1. Choose Natural Materials">1. 選擇天然材質</h3>
+      <p data-en="Opt for materials like bamboo, glass, organic cotton, or wood instead of synthetic plastics. Natural materials are biodegradable and don't leave microplastics behind.">盡量選擇竹子、玻璃、有機棉或木材等材質來替代合成塑膠。天然材質具有生物可分解性，且不會在環境中殘留微塑膠。</p>
+
+      <h3 data-en="2. Support Sustainable Brands">2. 支持永續品牌</h3>
+      <p data-en="Look for brands that prioritize fair trade, eco-friendly packaging, and carbon-neutral production. Check their certifications to ensure you are supporting genuine eco-initiatives.">尋找重視公平貿易、環保包裝以及碳中和生產的品牌。在購買前查閱他們的環保認證，確保你的消費支持了真正的環保行動。</p>
+
+      <h3 data-en="3. Buy Less, Choose Well">3. 重質不重量</h3>
+      <p data-en="Fast fashion and cheap disposable goods create immense waste. Invest in durable, high-quality products that will last for years.">快時尚與廉價的拋棄式商品製造了巨大的浪費。投資耐用、高品質的產品，讓它們能陪伴你更長的時間。</p>
+    </article>
+
   </main>
+
+  <footer>
+    <p data-en="© 2026 Eco Helper | Contact: info@example.com">© 2026 減塑小助手 | 聯絡我們：info@example.com</p>
+    <div class="social">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
+
+  <button id="backToTop" aria-label="回到頂端" title="回到頂端">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
