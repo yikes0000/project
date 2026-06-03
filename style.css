@@ -18,6 +18,7 @@ body {
   z-index: 1000;
   justify-content: flex-start; 
   gap: 24px; 
+  box-sizing: border-box;
 }
 
 .navbar ul {
@@ -208,6 +209,29 @@ footer .social a:hover { color: #f39c12; }
   max-width: 1000px;
   margin: auto;
 }
+/* 右側功能區塊 (包含 SDG標籤、語言按鈕、漢堡選單) */
+.nav-right {
+  margin-left: auto; /* 將這整個區塊推到最右邊 */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 語言切換按鈕樣式 */
+.lang-btn {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.lang-btn:hover {
+  background: #fff;
+  color: #0b6b3a;
+}
 
 /* ====== 行動版 RWD ====== */
 /* ====== 行動版 RWD ====== */
@@ -260,7 +284,6 @@ footer .social a:hover { color: #f39c12; }
 
 /* ====== 新增：導覽列右側 SDG 標籤 ====== */
 .nav-sdg {
-  margin-left: auto; /* 這個屬性會把它推到最右邊 */
   background: #f39c12; /* 使用與按鈕相同的橘黃色 */
   color: #fff;
   font-weight: bold;
