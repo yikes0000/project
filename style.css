@@ -1,78 +1,92 @@
-/* 全域設定 */
+/* 全站背景改為淺綠色 */
 body {
-  background: #f0fbf2;
-  font-family: "Microsoft JhengHei", sans-serif;
+  background: #f0fbf2; /* 淺綠色背景（可調） */
   margin: 0;
-  padding: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
 }
-
-/* 導覽列 */
+/* 導覽列：深綠色、靠左排列選單 */
 .navbar {
   display: flex;
   align-items: center;
-  background: #0b6b3a;
-  justify-content: flex-start;
-  gap: 24px;
+  background: #0b6b3a; /* 深綠色（可調） */
   padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  justify-content: flex-start; /* 讓 logo 與選單靠左排列 */
+  gap: 24px; /* logo 與選單之間的間距 */
 }
-
-.navbar .logo {
+/* 選單整組等距向左（靠近 logo），項目之間等距 */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 28px; /* 選單項目之間的等距 */
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+/* 選單連結樣式（白色文字） */
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 4px;
+}
+.navbar a:hover {
+  color: #f39c12;
+}
+/* Logo 保持在最左，選單緊接其右側 */
+.logo {
   color: #fff;
   font-weight: bold;
   margin-right: 8px;
 }
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 16px;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-}
-
+/* 漢堡按鈕位置微調（行動版） */
 .menu-toggle {
-  margin-left: auto;
-  background: none;
+  display: none;
+  background: transparent;
   border: none;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 24px;
   cursor: pointer;
+  margin-left: auto; /* 在桌面隱藏時不影響排列；行動版會顯示 */
 }
 
-/* Hero 區塊 */
-.hero {
-  padding: 120px 20px;
-  text-align: center;
-  background: url("https://source.unsplash.com/1600x900/?nature,eco") no-repeat center center/cover;
-}
-
+/* Hero 主標題改為黑色 */
 .hero-title {
-  color: #000;
-  margin: 0 0 12px;
+  color: #000; /* 黑色字 */
 }
 
+/* Hero 副標題（淺綠背景上顯示黑色） */
 .hero-subtitle {
-  color: #000;
+  color: #000;            /* 黑色文字 */
+  text-shadow: none;      /* 移除陰影 */
+  margin-top: 8px;
 }
 
+
+/* Hero */
+.hero {
+  background: url('https://source.unsplash.com/1600x900/?nature,eco') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 120px 20px;
+}
+/* Hero 的了解更多（若你想保留 hero 按鈕樣式） */
 .hero-btn {
   display: inline-block;
-  margin-top: 12px;
   background: #f39c12;
   color: #fff;
+  text-decoration: none;
   padding: 10px 20px;
   border-radius: 4px;
-  text-decoration: none;
-  font-weight: 600;
+}
+.hero-btn:hover {
+  background: #d35400;
 }
 
-/* 卡片區塊 */
+/* Cards */
 .cards {
   display: flex;
   justify-content: center;
@@ -80,36 +94,36 @@ body {
   padding: 80px 20px;
   flex-wrap: wrap;
 }
-
+/* 卡片背景改為淺綠色，並微調按鈕樣式 */
 .card {
-  background: #eaf9ef;
+  background: #eaf9ef; /* 淺綠色背景 */
   padding: 20px;
   border-radius: 8px;
   text-align: center;
   width: 250px;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
-
-.card i {
-  color: #0b6b3a;
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
-
-.card h3 {
-  margin-top: 12px;
-}
-
+/* 卡片上的了解更多按鈕 */
 .card-btn {
   display: inline-block;
   margin-top: 12px;
-  background: #0b6b3a;
+  background: #0b6b3a; /* 深綠色按鈕，可調 */
   color: #fff;
   text-decoration: none;
   padding: 8px 14px;
   border-radius: 6px;
   font-weight: 600;
 }
+.card-btn:hover {
+  background: #09562f;
+}
 
-/* 碳排放計算機 */
+/* Calculator */
 .calculator {
   background: #ecf0f1;
   padding: 40px 20px;
@@ -118,23 +132,11 @@ body {
   border-radius: 8px;
   max-width: 600px;
 }
-
-.calculator h2 {
-  margin-bottom: 20px;
-}
-
-.calculator .section {
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-.calculator input {
-  padding: 8px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.calc-btn {
+.calculator h2 { margin-bottom: 20px; }
+.section { margin-bottom: 20px; text-align: left; }
+label { display: block; margin: 8px 0 4px; }
+input { padding: 8px; width: 100%; box-sizing: border-box; }
+button.calc-btn, #calcBtn {
   background: #27ae60;
   color: #fff;
   border: none;
@@ -142,37 +144,50 @@ body {
   cursor: pointer;
   border-radius: 4px;
 }
+button.calc-btn:hover, #calcBtn:hover { background: #1e8449; }
+#result { margin-top: 20px; font-weight: bold; text-align: center; }
 
 /* Footer */
 footer {
-  background: #0b6b3a;
+  background: #2c3e50;
   color: #fff;
   text-align: center;
   padding: 20px;
+  margin-top: 40px;
 }
+footer .social a { color: #fff; margin: 0 10px; }
+footer .social a:hover { color: #f39c12; }
 
-footer .social a {
-  color: #fff;
-  margin: 0 10px;
-}
-
-/* 回到頂端按鈕 */
+/* Back to top */
 #backToTop {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: none;
-  padding: 10px;
-  background: #4CAF50;
-  color: white;
+  bottom: 30px;
+  right: 30px;
+  background: #f39c12;
   border: none;
-  border-radius: 5px;
+  padding: 10px;
+  border-radius: 50%;
   cursor: pointer;
+  display: none;
 }
+#backToTop i { color: #fff; }
 
-
-#backToTop.show {
-  display: block;
-  opacity: 1;
+/* 行動版：讓漢堡按鈕顯示並把選單改為絕對定位 */
+@media (max-width: 768px) {
+  .menu-toggle { display: block; margin-left: auto; }
+  .navbar { padding: 10px 12px; }
+  .navbar ul { 
+    flex-direction: column;
+    background: #0b6b3a;
+    position: absolute;
+    top: 56px;
+    right: 12px;
+    display: none;
+    width: 200px;
+    gap: 12px;
+    padding: 12px;
+  }
+  .navbar ul.show { display: flex; }
+}
 }
 
