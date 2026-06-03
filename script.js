@@ -1,46 +1,65 @@
-// ====== 全域變數與語系切換 ======
-window.currentLang = 'zh'; 
+// ====== 全域變數與語系切換 (加入 localStorage 記憶功能) ======
+// 優先讀取瀏覽器記憶，如果沒有紀錄就預設為 'zh'
+window.currentLang = localStorage.getItem('appLang') || 'zh'; 
 const langToggle = document.getElementById('langToggle');
 
+// 把翻譯動作獨立寫成一個功能
+function applyTranslation() {
+  if (langToggle) {
+    langToggle.textContent = window.currentLang === 'zh' ? 'EN' : '中';
+  }
+  
+  // 找出所有帶有 data-en 的標籤
+  document.querySelectorAll('[data-en]').forEach(el => {
+    // 備份原本的中文內容
+    if (!el.hasAttribute('data-zh')) {
+      el.setAttribute('data-zh', el.innerHTML);
+    }
+    // 根據當前語言替換文字
+    el.innerHTML = window.currentLang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-zh');
+  });
+
+  // 如果計算機已經有跑出結果，順便更新計算機結果的翻譯
+  if (document.getElementById('result') && document.getElementById('result').textContent !== '') {
+    calculateCarbon();
+  }
+}
+
+// 🌟 網頁一載入，馬上執行一次翻譯，這樣跨網頁就能保持相同語言
+applyTranslation();
+
+// 當按鈕被點擊時
 if (langToggle) {
   langToggle.addEventListener('click', () => {
     // 切換語系狀態
     window.currentLang = window.currentLang === 'zh' ? 'en' : 'zh';
-    langToggle.textContent = window.currentLang === 'zh' ? 'EN' : '中';
-    
-    // 找出所有帶有 data-en 的標籤
-    document.querySelectorAll('[data-en]').forEach(el => {
-      // 第一次切換時，把原本的中文內容備份到 data-zh
-      if (!el.hasAttribute('data-zh')) {
-        el.setAttribute('data-zh', el.innerHTML);
-      }
-      // 根據當前語言替換文字
-      el.innerHTML = window.currentLang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-zh');
-    });
-
-    // 如果計算機已經有跑出結果，切換語言時自動重新計算來更新翻譯
-    if (document.getElementById('result') && document.getElementById('result').textContent !== '') {
-      calculateCarbon();
-    }
+    // 把新狀態存進瀏覽器的 localStorage 裡
+    localStorage.setItem('appLang', window.currentLang);
+    // 執行翻譯
+    applyTranslation();
   });
 }
 
 // ====== 回到頂端按鈕 ======
 const backToTop = document.getElementById("backToTop");
-window.addEventListener("scroll", () => {
-  backToTop.style.display = window.scrollY > 200 ? "block" : "none";
-});
-backToTop.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+if (backToTop) {
+  window.addEventListener("scroll", () => {
+    backToTop.style.display = window.scrollY > 200 ? "block" : "none";
+  });
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
 
 // ====== 漢堡選單 ======
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".navbar ul");
-menuToggle.addEventListener("click", () => {
-  const isOpen = navLinks.classList.toggle("show");
-  menuToggle.setAttribute('aria-expanded', isOpen);
-});
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("show");
+    menuToggle.setAttribute('aria-expanded', isOpen);
+  });
+}
 
 // ====== 碳排放計算機 ======
 function calculateCarbon() {
