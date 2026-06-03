@@ -5,26 +5,71 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>小改變大影響 - 減塑小助手</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  
   <nav class="navbar">
-    <div class="logo">減塑小助手</div>
-    <a class="back-home" href="index.html#tips">← 返回主頁</a>
+    <div class="logo" data-en="Eco Helper">減塑小助手</div>
+    <ul>
+      <li><a href="index.html#home" data-en="Home">首頁</a></li>
+      <li><a href="index.html#tips" data-en="Tips">減塑技巧</a></li>
+      <li><a href="index.html#calculator" data-en="Carbon Calc">碳排放計算機</a></li>
+      <li><a href="index.html#contact" data-en="Contact">聯絡</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <div class="nav-sdg">SDG 12</div>
+      <button id="langToggle" class="lang-btn">EN</button>
+      <button class="menu-toggle" aria-expanded="false" aria-label="切換選單">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+    </div>
   </nav>
 
+  <section class="hero">
+    <h1 class="hero-title" data-en="Small Changes 💡">小改變大影響 💡</h1>
+    <p class="hero-subtitle" data-en="Every little effort adds up to a huge change">每天一點點努力，累積成巨大的改變</p>
+    <a class="hero-btn" href="index.html" data-en="Back to Home">返回首頁</a>
+  </section>
+
   <main class="page-main">
-    <h1>小改變大影響</h1>
-    <p>在這裡補充「小改變」的故事、挑戰與實際案例。</p>
+    
+    <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1000&q=80" alt="保護環境小改變" class="content-image">
 
-    <section>
-      <h2>每日小任務</h2>
-      <ul>
-        <li>一週不使用一次性吸管</li>
-        <li>每月檢視家中一次性用品並替換</li>
-      </ul>
-    </section>
+    <article>
+      <h2 data-en="The Power of One">一個人的力量</h2>
+      <p data-en="We often think that individual actions are too small to make a difference. However, collective small changes can transform industries and save ecosystems.">我們經常認為個人的力量太渺小，無法改變什麼。然而，當無數個「小改變」聚集起來，就能撼動整個產業並拯救生態系統。</p>
 
-    <p><a class="card-btn" href="index.html#tips">回到卡片</a></p>
+      <div class="toc-box" style="margin-top: 32px;">
+        <h3 data-en="Daily Eco-Challenges">🌱 每日環保小挑戰</h3>
+        <ul>
+          <li style="margin-bottom: 8px;" data-en="Refuse single-use plastic straws for an entire week."><strong>挑戰一：</strong> 嘗試一整週完全不使用一次性塑膠吸管。</li>
+          <li style="margin-bottom: 8px;" data-en="Sort your trash and wash recyclables properly before tossing them."><strong>挑戰二：</strong> 確實做好垃圾分類，並在丟棄前將回收物清洗乾淨。</li>
+          <li style="margin-bottom: 8px;" data-en="Review your household items monthly and replace one disposable item with a reusable one."><strong>挑戰三：</strong> 每月檢視家中用品，將一樣「拋棄式消耗品」替換成「可重複使用的產品」。</li>
+          <li style="margin-bottom: 8px;" data-en="Bring your own shopping bag to the convenience store or supermarket."><strong>挑戰四：</strong> 隨身在包包裡放一個摺疊環保袋，去超商不買塑膠袋。</li>
+        </ul>
+      </div>
+
+      <p data-en="Don't be discouraged by occasional slip-ups. Perfection isn't the goal; consistent, conscious choices are what truly matter.">不要因為偶爾忘記帶環保杯而感到氣餒。我們的目標不是做到完美，而是持續保持這份愛護地球的意識。</p>
+    </article>
+
   </main>
+
+  <footer>
+    <p data-en="© 2026 Eco Helper | Contact: info@example.com">© 2026 減塑小助手 | 聯絡我們：info@example.com</p>
+    <div class="social">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
+
+  <button id="backToTop" aria-label="回到頂端" title="回到頂端">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js" defer></script>
 </body>
+</html>
 </html>
