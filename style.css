@@ -226,4 +226,24 @@ footer .social a:hover { color: #f39c12; }
   }
   .navbar ul.show { display: flex; }
 }
+/* ====== card1.html 專用樣式 ====== */
+.content-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
 
+.toc-box {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 32px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.toc-box h3 {
+  margin-top: 0;
+  color: #0b6b3a;
+}
