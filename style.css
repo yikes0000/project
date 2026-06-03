@@ -210,9 +210,17 @@ footer .social a:hover { color: #f39c12; }
 }
 
 /* ====== 行動版 RWD ====== */
+/* ====== 行動版 RWD ====== */
 @media (max-width: 768px) {
-  .menu-toggle { display: block; margin-left: auto; }
-  .navbar { padding: 10px 12px; }
+  /* 將原本的 margin-left: auto 拿掉，因為 nav-sdg 已經負責把右邊元素推開了 */
+  .menu-toggle { 
+    display: block; 
+    margin-left: 0; 
+  }
+  .navbar { 
+    padding: 10px 12px; 
+    gap: 12px; /* 手機版間距縮小 */
+  }
   .navbar ul { 
     flex-direction: column;
     background: #0b6b3a;
@@ -223,6 +231,8 @@ footer .social a:hover { color: #f39c12; }
     width: 200px;
     gap: 12px;
     padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   }
   .navbar ul.show { display: flex; }
 }
