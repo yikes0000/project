@@ -9,6 +9,7 @@
 </head>
 <body>
 
+  <!-- 導覽列 -->
   <nav class="navbar">
     <div class="logo">減塑小助手</div>
     <ul>
@@ -19,17 +20,24 @@
     </ul>
   </nav>
 
+  <!-- Hero 區塊 -->
   <section class="hero">
     <h1 class="hero-title">重複使用 ♻️</h1>
     <p class="hero-subtitle">減塑生活，從「可重複使用」開始</p>
     <a class="hero-btn" href="index.html">返回首頁</a>
   </section>
 
-  <main class="page-main" style="display:flex; gap:40px;">
+  <!-- 主要內容 -->
+  <!-- 移除了原本的 display:flex; gap:40px; 讓內容變成由上而下自然排列 -->
+  <main class="page-main">
     
-    <aside style="flex:1; background:#f9f9f9; padding:20px; border-radius:8px;">
+    <!-- 新增的圖片 (你可以把 src 替換成你自己的圖片路徑，例如 "images/my-pic.jpg") -->
+    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1000&q=80" alt="重複使用環保概念" class="content-image">
+
+    <!-- 文章目錄 (移到圖片下方、文字上方) -->
+    <aside class="toc-box">
       <h3>文章目錄</h3>
-      <ol>
+      <ol style="margin-bottom: 0;">
         <li><a href="#section1">外帶使用循環飲料杯</a></li>
         <li><a href="#section2">循環共享餐盒容器</a></li>
         <li><a href="#section3">自備水壺環保杯</a></li>
@@ -40,7 +48,8 @@
       </ol>
     </aside>
 
-    <article style="flex:3;">
+    <!-- 文章內容 -->
+    <article>
       <h2 id="section1">外帶使用循環飲料杯</h2>
       <p>外帶飲料時選擇循環杯，減少一次性塑膠杯的浪費。</p>
 
@@ -64,6 +73,7 @@
     </article>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p>© 2026 減塑小助手 | 聯絡我們：info@example.com</p>
     <div class="social">
@@ -73,9 +83,14 @@
     </div>
   </footer>
 
+  <!-- 回到頂端按鈕 -->
   <button id="backToTop" aria-label="回到頂端" title="回到頂端">
     <i class="fas fa-arrow-up"></i>
   </button>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
 
   <script src="script.js" defer></script>
 </body>
