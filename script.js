@@ -17,13 +17,14 @@ menuToggle.addEventListener("click", () => {
 
 // 碳排放計算機
 function calculateCarbon() {
- const classroom = Number(document.getElementById('classroom').value) || 0;
- const computerClass = Number(document.getElementById('computerClass').value) || 0;
- const outdoorClass = Number(document.getElementById('outdoorClass').value) || 0;
- const mobile = Number(document.getElementById('mobile').value) || 0;
- const meatMeal = Number(document.getElementById('meatMeal').value) || 0;
- const vegMeal = Number(document.getElementById('vegMeal').value) || 0;
- const computer = Number(document.getElementById('computer').value) || 0;
+  // 加入 || 0 確保沒有輸入時預設為 0，避免運算錯誤
+  const classroom = Number(document.getElementById('classroom').value) || 0;
+  const computerClass = Number(document.getElementById('computerClass').value) || 0;
+  const outdoorClass = Number(document.getElementById('outdoorClass').value) || 0;
+  const mobile = Number(document.getElementById('mobile').value) || 0;
+  const meatMeal = Number(document.getElementById('meatMeal').value) || 0;
+  const vegMeal = Number(document.getElementById('vegMeal').value) || 0;
+  const computer = Number(document.getElementById('computer').value) || 0;
 
   // 換算係數
   const FACTORS = {
@@ -48,10 +49,10 @@ function calculateCarbon() {
   // 🌳 每棵樹每月可抵消 0.9 kg CO₂
   const treesNeeded = total / 0.9;
 
+  // 使用反引號 ` ` 來正確解析變數
   const resultEl = document.getElementById('result');
   resultEl.textContent = `估計碳排放：${total.toFixed(2)} kg CO₂e，需要約 ${Math.ceil(treesNeeded)} 棵樹來抵消每月排放`;
 }
-
 
 // 綁定按鈕
 document.getElementById('calcBtn').addEventListener('click', calculateCarbon);
