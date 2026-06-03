@@ -10,7 +10,7 @@
 </head>
 <body style="background:#f0fbf2;">
 
-  <!-- 導覽列 -->
+  <!-- 導覽列（內嵌少量 inline style 以確保顏色與靠左排列） -->
   <nav class="navbar" style="background:#0b6b3a; justify-content:flex-start; gap:24px;">
     <div class="logo" style="color:#fff; font-weight:bold; margin-right:8px;">減塑小助手</div>
 
@@ -35,7 +35,7 @@
       <a class="hero-btn" href="https://globalgoals.tw/12-responsible-consumption-and-production" target="_blank" rel="noopener" style="display:inline-block; margin-top:12px; background:#f39c12; color:#fff; padding:10px 20px; border-radius:4px; text-decoration:none;">了解更多</a>
     </section>
 
-    <!-- 卡片式內容 -->
+    <!-- 卡片式內容（每張 card 使用 inline 背景色以確保立即生效） -->
     <section class="cards" id="tips" style="display:flex; justify-content:center; gap:20px; padding:80px 20px; flex-wrap:wrap;">
       <div class="card" style="background:#eaf9ef; padding:20px; border-radius:8px; text-align:center; width:250px; transition:transform 0.3s;">
         <i class="fas fa-recycle fa-2x" aria-hidden="true" style="color:#0b6b3a;"></i>
@@ -95,11 +95,21 @@
   </main>
 
   <!-- Footer -->
-  <script src="script.js"></script>
   <footer id="contact" style="background:#0b6b3a; color:#fff; text-align:center; padding:20px;">
     <p style="margin:0;">© 2026 減塑小助手 | 聯絡我們：info@example.com</p>
     <div class="social" style="margin-top:8px;">
       <a href="#" aria-label="Facebook" style="color:#fff; margin:0 10px;"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-      <a href="#" aria-label="Instagram" style="color:#
-        
+      <a href="#" aria-label="Instagram" style="color:#fff; margin:0 10px;"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Twitter" style="color:#fff; margin:0 10px;"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+    </div>
+  </footer>
+
+  <!-- 回到頂端按鈕 -->
+  <button id="backToTop" aria-label="回到頂端" title="回到頂端" style="position:fixed; bottom:30px; right:30px; background:#f39c12; border:none; padding:10px; border-radius:50%; cursor:pointer; display:none;">
+    <i class="fas fa-arrow-up" style="color:#fff;"></i>
+  </button>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
 
