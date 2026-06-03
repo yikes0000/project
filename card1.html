@@ -9,73 +9,79 @@
 </head>
 <body>
 
-  <!-- 導覽列 -->
+  <!-- 導覽列 (加入與首頁相同的右側按鈕群組) -->
   <nav class="navbar">
-    <div class="logo">減塑小助手</div>
+    <div class="logo" data-en="Eco Helper">減塑小助手</div>
     <ul>
-      <li><a href="index.html#home">首頁</a></li>
-      <li><a href="index.html#tips">減塑技巧</a></li>
-      <li><a href="index.html#calculator">碳排放計算機</a></li>
-      <li><a href="index.html#contact">聯絡</a></li>
+      <li><a href="index.html#home" data-en="Home">首頁</a></li>
+      <li><a href="index.html#tips" data-en="Tips">減塑技巧</a></li>
+      <li><a href="index.html#calculator" data-en="Carbon Calc">碳排放計算機</a></li>
+      <li><a href="index.html#contact" data-en="Contact">聯絡</a></li>
     </ul>
+
+    <div class="nav-right">
+      <div class="nav-sdg">SDG 12</div>
+      <button id="langToggle" class="lang-btn">EN</button>
+      <button class="menu-toggle" aria-expanded="false" aria-label="切換選單">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+    </div>
   </nav>
 
   <!-- Hero 區塊 -->
   <section class="hero">
-    <h1 class="hero-title">重複使用 ♻️</h1>
-    <p class="hero-subtitle">減塑生活，從「可重複使用」開始</p>
-    <a class="hero-btn" href="index.html">返回首頁</a>
+    <h1 class="hero-title" data-en="Reuse ♻️">重複使用 ♻️</h1>
+    <p class="hero-subtitle" data-en="Start your plastic-free life by reusing">減塑生活，從「可重複使用」開始</p>
+    <a class="hero-btn" href="index.html" data-en="Back to Home">返回首頁</a>
   </section>
 
   <!-- 主要內容 -->
-  <!-- 移除了原本的 display:flex; gap:40px; 讓內容變成由上而下自然排列 -->
   <main class="page-main">
     
-    <!-- 新增的圖片 (你可以把 src 替換成你自己的圖片路徑，例如 "images/my-pic.jpg") -->
-    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1000&q=80" alt="plant" class="content-image">
+    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1000&q=80" alt="重複使用環保概念" class="content-image">
 
-    <!-- 文章目錄 (移到圖片下方、文字上方) -->
+    <!-- 文章目錄 -->
     <aside class="toc-box">
-      <h3>文章目錄</h3>
+      <h3 data-en="Table of Contents">文章目錄</h3>
       <ol style="margin-bottom: 0;">
-        <li><a href="#section1">外帶使用循環飲料杯</a></li>
-        <li><a href="#section2">循環共享餐盒容器</a></li>
-        <li><a href="#section3">自備水壺環保杯</a></li>
-        <li><a href="#section4">自備餐具</a></li>
-        <li><a href="#section5">自備購物袋或環保容器</a></li>
-        <li><a href="#section6">結語：拋棄式文化</a></li>
-        <li><a href="#section7">全球減塑行動</a></li>
+        <li><a href="#section1" data-en="Reusable Cups for Takeout">外帶使用循環飲料杯</a></li>
+        <li><a href="#section2" data-en="Shared Meal Containers">循環共享餐盒容器</a></li>
+        <li><a href="#section3" data-en="Bring Your Own Bottle">自備水壺環保杯</a></li>
+        <li><a href="#section4" data-en="Bring Your Own Cutlery">自備餐具</a></li>
+        <li><a href="#section5" data-en="Eco Bags & Containers">自備購物袋或環保容器</a></li>
+        <li><a href="#section6" data-en="Conclusion: Throwaway Culture">結語：拋棄式文化</a></li>
+        <li><a href="#section7" data-en="Global Plastic Reduction">全球減塑行動</a></li>
       </ol>
     </aside>
 
     <!-- 文章內容 -->
     <article>
-      <h2 id="section1">外帶使用循環飲料杯</h2>
-      <p>外帶飲料時選擇循環杯，減少一次性塑膠杯的浪費。</p>
+      <h2 id="section1" data-en="Reusable Cups for Takeout">外帶使用循環飲料杯</h2>
+      <p data-en="Choose reusable cups when ordering takeout to reduce single-use plastic waste.">外帶飲料時選擇循環杯，減少一次性塑膠杯的浪費。</p>
 
-      <h2 id="section2">循環共享餐盒容器</h2>
-      <p>外食時使用共享餐盒，降低免洗餐盒的使用。</p>
+      <h2 id="section2" data-en="Shared Meal Containers">循環共享餐盒容器</h2>
+      <p data-en="Use shared containers when eating out to lower the use of disposable boxes.">外食時使用共享餐盒，降低免洗餐盒的使用。</p>
 
-      <h2 id="section3">自備水壺環保杯</h2>
-      <p>隨身攜帶水壺或環保杯，避免瓶裝水與塑膠杯。</p>
+      <h2 id="section3" data-en="Bring Your Own Bottle">自備水壺環保杯</h2>
+      <p data-en="Carry a water bottle to avoid bottled water and plastic cups.">隨身攜帶水壺或環保杯，避免瓶裝水與塑膠杯。</p>
 
-      <h2 id="section4">自備餐具</h2>
-      <p>攜帶筷子、湯匙、叉子、吸管，減少免洗餐具。</p>
+      <h2 id="section4" data-en="Bring Your Own Cutlery">自備餐具</h2>
+      <p data-en="Bring chopsticks, spoons, forks, and straws to reduce disposable cutlery.">攜帶筷子、湯匙、叉子、吸管，減少免洗餐具。</p>
 
-      <h2 id="section5">自備購物袋或環保容器</h2>
-      <p>購物時自備環保袋或容器，避免塑膠袋。</p>
+      <h2 id="section5" data-en="Eco Bags & Containers">自備購物袋或環保容器</h2>
+      <p data-en="Bring your own bags or containers when shopping to avoid plastic bags.">購物時自備環保袋或容器，避免塑膠袋。</p>
 
-      <h2 id="section6">結語：拋棄式文化</h2>
-      <p>「用完就丟」的文化需要改變，重複使用是關鍵。</p>
+      <h2 id="section6" data-en="Conclusion: Throwaway Culture">結語：拋棄式文化</h2>
+      <p data-en="The 'use and throw' culture needs to change; reusing is the key.">「用完就丟」的文化需要改變，重複使用是關鍵。</p>
 
-      <h2 id="section7">全球減塑行動</h2>
-      <p>政府、企業與個人都需要共同支持減塑，才能守護地球。</p>
+      <h2 id="section7" data-en="Global Plastic Reduction">全球減塑行動</h2>
+      <p data-en="Governments, businesses, and individuals must work together to protect the Earth.">政府、企業與個人都需要共同支持減塑，才能守護地球。</p>
     </article>
   </main>
 
   <!-- Footer -->
   <footer>
-    <p>© 2026 減塑小助手 | 聯絡我們：info@example.com</p>
+    <p data-en="© 2026 Eco Helper | Contact: info@example.com">© 2026 減塑小助手 | 聯絡我們：info@example.com</p>
     <div class="social">
       <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
       <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -83,14 +89,9 @@
     </div>
   </footer>
 
-  <!-- 回到頂端按鈕 -->
   <button id="backToTop" aria-label="回到頂端" title="回到頂端">
     <i class="fas fa-arrow-up"></i>
   </button>
-
-  <script src="script.js" defer></script>
-</body>
-</html>
 
   <script src="script.js" defer></script>
 </body>
