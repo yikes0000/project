@@ -143,3 +143,14 @@ function calculateCarbon() {
 if (document.getElementById('calcBtn')) {
   document.getElementById('calcBtn').addEventListener('click', calculateCarbon);
 }
+// ====== 初始化 AOS 捲動動畫 ======
+// 確保網頁的 HTML 都載入完畢後，再啟動動畫
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof AOS !== 'undefined') {
+    AOS.init({
+      duration: 800, // 動畫的持續時間 (800 毫秒，讓浮現的感覺比較優雅)
+      once: true,    // 設定為 true，代表卡片浮現後就不會再消失，避免上下滾動時一直閃爍
+      offset: 100    // 提早 100px 觸發動畫，避免卡片滑到畫面中間才跑出來
+    });
+  }
+});
