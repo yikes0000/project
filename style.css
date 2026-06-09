@@ -294,3 +294,14 @@ footer .social a:hover { color: #f39c12; }
   font-size: 0.9rem;
   letter-spacing: 1px;
 }
+
+/* ====== 新增：首頁滿版全螢幕效果 ====== */
+#home {
+  min-height: 100vh;        /* 關鍵：讓區塊的最小高度等於瀏覽器視窗的 100% (Viewport Height) */
+  display: flex;            /* 啟用 Flexbox 排版，方便控制內部文字位置 */
+  flex-direction: column;    /* 讓裡面的大標題、副標題、按鈕維持「由上往下」垂直排列 */
+  justify-content: center;  /* 讓內容在整個全螢幕畫面中「垂直置中」 */
+  align-items: center;      /* 讓內容在整個全螢幕畫面中「水平置中」 */
+  box-sizing: border-box;
+  padding-top: 60px;        /* 預留上方固定導覽列（Navbar）的高度，防止文字被遮擋 */
+}
