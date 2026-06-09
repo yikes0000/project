@@ -1,117 +1,90 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>減塑小助手</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>減塑小助手</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 確保全螢幕區塊不會被其他樣式干擾，
+           這段可以直接加在這裡，或整合進 style.css (建議後者) */
+        body { margin: 0; padding: 0; }
+    </style>
 </head>
 <body>
+    <section class="fullscreen-hero">
+        <div class="fs-hero-content">
+            <h1 class="fs-title" data-en="Together for Sustainable Living" data-zh="一起為永續生活努力">一起為永續生活努力</h1>
+            <a href="#navbar" class="fs-button" data-en="Learn More" data-zh="了解更多">了解更多</a>
+        </div>
+    </section>
 
-  <!-- 導覽列 -->
-  <nav class="navbar">
-    <div class="logo" data-en="Eco Helper">減塑小助手</div>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="logo">Plastic Free Helper</a>
+            <ul class="nav-links">
+                <li><a href="#tips" data-en="Reduction Tips" data-zh="減塑小撇步">減塑小撇步</a></li>
+                <li><a href="#calculator" data-en="Footprint Calculator" data-zh="碳足跡計算機">碳足跡計算機</a></li>
+                <li><button id="lang-switch">English</button></li>
+            </ul>
+        </div>
+    </nav>
 
-    <ul>
-      <li><a href="#home" data-en="Home">首頁</a></li>
-      <li><a href="#tips" data-en="Tips">減塑技巧</a></li>
-      <li><a href="#calculator" data-en="Carbon Calc">碳排放計算機</a></li>
-      <li><a href="#contact" data-en="Contact">聯絡</a></li>
-    </ul>
+    <section class="scroll-down-intro">
+        <div class="container">
+            <h1 class="zh-text">綠色生活, 從減塑開始</h1>
+            <h2 class="en-text">Green Life, Starts with Reducing Plastic</h2>
+        </div>
+    </section>
 
-    <!-- 將右側元素包裝在一起，避免在手機版跑版 -->
-    <div class="nav-right">
-      <div class="nav-sdg">SDG 12</div>
-      <button id="langToggle" class="lang-btn">EN</button>
-      <button class="menu-toggle" aria-expanded="false" aria-label="切換選單">
-        <i class="fas fa-bars" aria-hidden="true"></i>
-      </button>
+    <div class="card-calculator-container">
+        <section class="cards" id="tips">
+            <div class="container">
+                <a href="card1.html" class="card">
+                    <img src="減塑1.png" alt="Card 1" class="card-img">
+                    <p class="zh-text">重複使用水瓶和購物袋</p>
+                    <p class="en-text">Reuse Water Bottles & Bags</p>
+                </a>
+                <a href="card2.html" class="card">
+                    <img src="減塑2.png" alt="Card 2" class="card-img">
+                    <p class="zh-text">拒絕一次性餐具</p>
+                    <p class="en-text">Say No to Single-Use Utensils</p>
+                </a>
+                <a href="card3.html" class="card">
+                    <img src="減塑3.png" alt="Card 3" class="card-img">
+                    <p class="zh-text">購買無包裝商品</p>
+                    <p class="en-text">Choose Package-Free Products</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="calculator" id="calculator">
+            <div class="container">
+                <h2 data-en="Carbon Footprint Calculator" data-zh="碳足跡計算機">碳足跡計算機</h2>
+                <div class="calculator-box">
+                    <div class="input-group">
+                        <label for="plastic-bags" data-en="Plastic Bags per week" data-zh="每週使用塑膠袋數量：">每週使用塑膠袋數量：</label>
+                        <input type="number" id="plastic-bags" min="0" placeholder="0">
+                    </div>
+                    <div class="input-group">
+                        <label for="plastic-bottles" data-en="Plastic Bottles per week" data-zh="每週使用塑膠瓶數量：">每週使用塑膠瓶數量：</label>
+                        <input type="number" id="plastic-bottles" min="0" placeholder="0">
+                    </div>
+                    <div class="input-group">
+                        <label for="disposable-utensils" data-en="Single-use Utensils per week" data-zh="每週使用一次性餐具數量：">每週使用一次性餐具數量：</label>
+                        <input type="number" id="disposable-utensils" min="0" placeholder="0">
+                    </div>
+                    <button onclick="calculateFootprint()" data-en="Calculate" data-zh="開始計算">開始計算</button>
+                    <div id="result"></div>
+                </div>
+            </div>
+        </section>
     </div>
-  </nav>
 
-<main>
-    <section class="hero" id="home">
-      <h1 class="hero-title" data-en="Strive for a Sustainable Life!">一起為永續生活努力！</h1>
-      <p class="hero-subtitle" data-en="Reduce Plastic, Protect the Earth 🌍">減少塑膠，守護地球 🌍</p>
-      
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Sustainable_Development_Goal_12.svg" alt="SDG 12" class="hero-sdg-img">
-      
-      <a class="hero-btn" href="https://globalgoals.tw/12-responsible-consumption-and-production" target="_blank" rel="noopener" data-en="Learn More">了解更多</a>
-    </section>
+    <footer class="footer">
+        <p data-en="© 2024 Plastic Free Helper. Dedicated to Sustainability." data-zh="© 2024 減塑小助手。一起為地球努力。">© 2024 減塑小助手。一起為地球努力。</p>
+    </footer>
 
-    <section class="cards" id="tips">
-      <div class="card">
-        <i class="fas fa-recycle fa-2x" aria-hidden="true"></i>
-        <h3 data-en="Reuse">重複使用</h3>
-        <p data-en="Bring eco-bags and thermos to reduce single-use plastic.">攜帶環保袋、保溫杯，減少一次性塑膠。</p>
-        <a class="card-btn" href="card1.html" data-en="Learn More">了解更多</a>
-      </div>
-
-      <div class="card">
-        <i class="fas fa-leaf fa-2x" aria-hidden="true"></i>
-        <h3 data-en="Green Living">綠色生活</h3>
-        <p data-en="Choose natural materials, support sustainable brands.">選擇天然材質產品，支持永續品牌。</p>
-        <a class="card-btn" href="card2.html" data-en="Learn More">了解更多</a>
-      </div>
-
-      <div class="card">
-        <i class="fas fa-lightbulb fa-2x" aria-hidden="true"></i>
-        <h3 data-en="Small Changes">小改變大影響</h3>
-        <p data-en="A little effort every day adds up to a huge change.">每天一點點努力，累積成巨大的改變。</p>
-        <a class="card-btn" href="card3.html" data-en="Learn More">了解更多</a>
-      </div>
-    </section>
-      
-      <section class="calculator" id="calculator">
-      <h2 data-en="Carbon Footprint Calculator">碳排放計算機</h2>
-
-      <div class="section">
-        <label for="classroom" data-en="Classroom (hrs)">一般教室 (小時)</label>
-        <input type="number" id="classroom" value="0" min="0" step="0.1">
-        <label for="computerClass" data-en="Computer Lab (hrs)">電腦教室 (小時)</label>
-        <input type="number" id="computerClass" value="0" min="0" step="0.1">
-        <label for="outdoorClass" data-en="Outdoor Class (hrs)">戶外課程 (小時)</label>
-        <input type="number" id="outdoorClass" value="0" min="0" step="0.1">
-      </div>
-
-      <div class="section">
-        <label for="mobile" data-en="Mobile Usage (hrs)">手機使用 (小時)</label>
-        <input type="number" id="mobile" value="0" min="0" step="0.1">
-      </div>
-
-      <div class="section">
-        <label for="meatMeal" data-en="Meat Meal (meals)">葷食 (餐)</label>
-        <input type="number" id="meatMeal" value="0" min="0" step="1">
-        <label for="vegMeal" data-en="Veg Meal (meals)">素食 (餐)</label>
-        <input type="number" id="vegMeal" value="0" min="0" step="1">
-      </div>
-
-      <div class="section">
-        <label for="computer" data-en="PC Usage (hrs)">電腦使用 (小時)</label>
-        <input type="number" id="computer" value="0" min="0" step="0.1">
-      </div>
-
-      <button class="calc-btn" id="calcBtn" data-en="Calculate">計算</button>
-      <div id="result" role="status" aria-live="polite"></div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer id="contact">
-    <p data-en="© 2026 Eco Helper | Contact: info@example.com">© 2026 減塑小助手 | 聯絡我們：info@example.com</p>
-    <div class="social">
-      <a href="#" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-      <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-      <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-    </div>
-  </footer>
-
-  <button id="backToTop" aria-label="回到頂端" title="回到頂端">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-
-  <script src="script.js" defer></script>
+    <script src="script.js"></script>
 </body>
 </html>
-
