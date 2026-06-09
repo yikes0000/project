@@ -66,12 +66,12 @@ body {
   padding: 120px 20px; 
 }
 .hero-title {
-  color: #000; 
+  color: #fff; 
   margin: 0 0 12px;
 }
 
 .hero-subtitle {
-  color: #000;            
+  color: #fff;            
   text-shadow: none;      
   margin-top: 8px;
 }
