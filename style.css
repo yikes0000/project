@@ -19,6 +19,9 @@ body {
   justify-content: flex-start; 
   gap: 24px; 
   box-sizing: border-box;
+
+  /* 新增：下方細白框線 */
+  border-bottom: 1px solid #ffffff;
 }
 
 .navbar ul {
@@ -66,12 +69,12 @@ body {
   padding: 120px 20px; 
 }
 .hero-title {
-  color: #FFFF9F; 
+  color: #fff9f; 
   margin: 0 0 12px;
 }
 
 .hero-subtitle {
-  color: #FFFF9F;            
+  color: #fff9f;            
   text-shadow: none;      
   margin-top: 8px;
 }
