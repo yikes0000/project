@@ -1,4 +1,4 @@
-/* 全站背景改為淺綠色 */
+
 body {
   background: #C4F296; 
   margin: 0;
@@ -6,7 +6,7 @@ body {
   line-height: 1.6;
 }
 
-/* 導覽列：深綠色、靠左排列選單 */
+
 .navbar {
   display: flex;
   align-items: center;
@@ -20,7 +20,7 @@ body {
   gap: 24px; 
   box-sizing: border-box;
 
-  /* 新增：下方細白框線 */
+
   border-bottom: 1px solid #ffffff;
 }
 
@@ -59,13 +59,13 @@ body {
   margin-left: auto; 
 }
 
-/* Hero 區塊 */
+
 .hero {
-  /* 將原本的大自然背景與白色半透明遮罩，直接設定在 Hero 身上 */
+ 
   background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1)), 
               url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
   text-align: center;
-  /* 恢復原本的 padding，讓上下留白較為寬裕 */
+
   padding: 120px 20px; 
 }
 .hero-title {
@@ -93,7 +93,7 @@ body {
   background: #d35400;
 }
 
-/* Cards 卡片區塊 */
+
 .cards {
   display: flex;
   justify-content: center;
@@ -140,7 +140,7 @@ body {
   background: #09562f;
 }
 
-/* Calculator 碳排放計算機 */
+
 .calculator {
   background: #ecf0f1;
   padding: 40px 20px;
@@ -167,7 +167,6 @@ button.calc-btn, #calcBtn {
 button.calc-btn:hover, #calcBtn:hover { background: #1e8449; }
 #result { margin-top: 20px; font-weight: bold; text-align: center; }
 
-/* Footer */
 footer {
   background: #0b6b3a; 
   color: #fff;
@@ -180,7 +179,6 @@ footer .social { margin-top: 8px; }
 footer .social a { color: #fff; margin: 0 10px; }
 footer .social a:hover { color: #f39c12; }
 
-/* Back to top 按鈕 */
 #backToTop {
   position: fixed;
   bottom: 30px;
@@ -194,7 +192,7 @@ footer .social a:hover { color: #f39c12; }
 }
 #backToTop i { color: #fff; }
 
-/* ====== 新增：子頁面專用樣式 ====== */
+/* 子頁面*/
 .back-home {
   color: #fff;
   text-decoration: none;
@@ -213,15 +211,15 @@ footer .social a:hover { color: #f39c12; }
   max-width: 1000px;
   margin: auto;
 }
-/* 右側功能區塊 (包含 SDG標籤、語言按鈕、漢堡選單) */
+
 .nav-right {
-  margin-left: auto; /* 將這整個區塊推到最右邊 */
+  margin-left: auto; 
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-/* 語言切換按鈕樣式 */
+
 .lang-btn {
   background: transparent;
   color: #fff;
@@ -238,17 +236,15 @@ footer .social a:hover { color: #f39c12; }
 }
 
 
-/* ====== 行動版 RWD ====== */
-/* ====== 行動版 RWD ====== */
 @media (max-width: 768px) {
-  /* 將原本的 margin-left: auto 拿掉，因為 nav-sdg 已經負責把右邊元素推開了 */
+ 
   .menu-toggle { 
     display: block; 
     margin-left: 0; 
   }
   .navbar { 
     padding: 10px 12px; 
-    gap: 12px; /* 手機版間距縮小 */
+    gap: 12px;
   }
   .navbar ul { 
     flex-direction: column;
@@ -265,7 +261,7 @@ footer .social a:hover { color: #f39c12; }
   }
   .navbar ul.show { display: flex; }
 }
-/* ====== card1.html 專用樣式 ====== */
+
 .content-image {
   width: 100%;
   max-height: 400px;
@@ -287,24 +283,24 @@ footer .social a:hover { color: #f39c12; }
   color: #0b6b3a;
 }
 
-/* ====== 新增：導覽列右側 SDG 標籤 ====== */
+
 .nav-sdg {
-  background: #f39c12; /* 使用與按鈕相同的橘黃色 */
+  background: #f39c12; 
   color: #fff;
   font-weight: bold;
   padding: 4px 12px;
-  border-radius: 20px; /* 做成藥丸般的圓角形狀 */
+  border-radius: 20px; 
   font-size: 0.9rem;
   letter-spacing: 1px;
 }
 
-/* ====== 新增：首頁滿版全螢幕效果 ====== */
+
 #home {
-  min-height: 100vh;        /* 關鍵：讓區塊的最小高度等於瀏覽器視窗的 100% (Viewport Height) */
-  display: flex;            /* 啟用 Flexbox 排版，方便控制內部文字位置 */
-  flex-direction: column;    /* 讓裡面的大標題、副標題、按鈕維持「由上往下」垂直排列 */
-  justify-content: center;  /* 讓內容在整個全螢幕畫面中「垂直置中」 */
-  align-items: center;      /* 讓內容在整個全螢幕畫面中「水平置中」 */
+  min-height: 100vh;       
+  display: flex;          
+  flex-direction: column;    
+  justify-content: center;  
+  align-items: center;      
   box-sizing: border-box;
-  padding-top: 60px;        /* 預留上方固定導覽列（Navbar）的高度，防止文字被遮擋 */
+  padding-top: 60px;        
 }
