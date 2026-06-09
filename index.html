@@ -5,21 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>減塑小助手</title>
   <link rel="stylesheet" href="style.css">
-  <!-- ====== AOS 動畫 CSS ====== -->
+  <!-- AOS 動畫 CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <!-- ====== 社群分享預覽標籤 (Open Graph) ====== -->
+  <!-- 社群分享預覽標籤  -->
   <meta property="og:title" content="減塑小助手 | 一起為永續生活努力">
   <meta property="og:description" content="提供實用的減塑技巧、綠色生活指南，內建即時碳排放計算機，幫你輕鬆實踐 SDG 12！">
   <meta property="og:image" content="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=80">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://yikes0000.github.io/project/index.html">
-  <!-- 引入 Chart.js 圖表套件 -->
+  <!-- Chart.js 圖表套件 -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-  <!-- 導覽列 -->
+  <!-- 導覽 -->
   <nav class="navbar">
     <div class="logo" data-en="Eco Helper">減塑小助手</div>
 
@@ -50,7 +50,6 @@
     </section>
 
 <section class="cards" id="tips">
-      <!-- 第一張卡片：由下往上浮現，延遲 100 毫秒 -->
       <div class="card" data-aos="fade-up" data-aos-delay="100">
         <i class="fas fa-recycle fa-2x" aria-hidden="true"></i>
         <h3 data-en="Reuse">重複使用</h3>
@@ -58,7 +57,7 @@
         <a class="card-btn" href="card1.html" data-en="Learn More">了解更多</a>
       </div>
 
-      <!-- 第二張卡片：由下往上浮現，延遲 300 毫秒 -->
+     
       <div class="card" data-aos="fade-up" data-aos-delay="300">
         <i class="fas fa-leaf fa-2x" aria-hidden="true"></i>
         <h3 data-en="Green Living">綠色生活</h3>
@@ -66,7 +65,6 @@
         <a class="card-btn" href="card2.html" data-en="Learn More">了解更多</a>
       </div>
 
-      <!-- 第三張卡片：由下往上浮現，延遲 500 毫秒 -->
       <div class="card" data-aos="fade-up" data-aos-delay="500">
         <i class="fas fa-lightbulb fa-2x" aria-hidden="true"></i>
         <h3 data-en="Small Changes">小改變大影響</h3>
@@ -106,13 +104,13 @@
 
       <button class="calc-btn" id="calcBtn" data-en="Calculate">計算</button>
       <div id="result" role="status" aria-live="polite"></div>
-        <!-- 新增：用來顯示圖表的畫布 (預設先隱藏，計算後才顯示) -->
+
       <canvas id="carbonChart" style="max-width: 100%; max-height: 250px; margin: 20px auto; display: none;"></canvas>
     </section>
   </main>
 
   <footer id="contact">
-    <p data-en="© 2026 Eco Helper | Contact: info@example.com">© 2026 減塑小助手 | 聯絡我們：wei</p>
+    <p data-en="© 2026 Eco Helper | Contact: wei">© 2026 減塑小助手 | 聯絡我們：wei</p>
     
     <div style="margin-top: 12px; display: flex; justify-content: center; align-items: center;">
       <span style="font-size: 0.9em; margin-right: 8px;" data-en="Total Visitors:">累積瀏覽人次：</span>
@@ -129,7 +127,7 @@
   <button id="backToTop" aria-label="回到頂端" title="回到頂端">
     <i class="fas fa-arrow-up"></i>TOP
   </button>
-  <!-- ====== 新增：AOS 動畫 JS ====== -->
+  <!-- AOS 動畫 JS-->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="script.js" defer></script>
 </body>
