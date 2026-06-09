@@ -56,113 +56,86 @@ body {
   margin-left: auto; 
 }
 
-/* style.css 新增及修改內容 */
-
-/* 確保全網頁流暢捲動 (全網域套用) */
-html {
-  scroll-behavior: smooth;
+/* Hero 區塊 */
+.hero {
+  /* 將原本的大自然背景與白色半透明遮罩，直接設定在 Hero 身上 */
+  background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1)), 
+              url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+  text-align: center;
+  /* 恢復原本的 padding，讓上下留白較為寬裕 */
+  padding: 120px 20px; 
+}
+.hero-title {
+  color: #000; 
+  margin: 0 0 12px;
 }
 
-/* ==============================
-   Fullscreen Tree Hero Section
-   ============================== */
-.fullscreen-hero {
-  position: relative;
-  width: 100vw;
-  height: 100vh; /* 占滿整個螢幕高度 */
-  
-  /* 設置樹木背景圖片 (image_0.png) */
-  background-image: url('image_0.png'); 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  
-  /* 垂直、水平置中區塊內容 */
+.hero-subtitle {
+  color: #000;            
+  text-shadow: none;      
+  margin-top: 8px;
+}
+
+.hero-btn {
+  display: inline-block;
+  margin-top: 12px;
+  background: #f39c12;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+.hero-btn:hover {
+  background: #d35400;
+}
+
+/* Cards 卡片區塊 */
+.cards {
   display: flex;
   justify-content: center;
-  align-items: center;
+  gap: 20px;
+  padding: 80px 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #eaf9ef; 
+  padding: 20px;
+  border-radius: 8px;
   text-align: center;
-  
-  /* 確保它疊在其他內容上方 */
-  z-index: 10; 
+  width: 250px;
+  transition: transform 0.3s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 
-/* 在背景圖片上加一層深色半透明遮罩，提高文字可讀性 */
-.fullscreen-hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3); /* 深色遮罩，透明度 0.3 */
-  z-index: 1;
+.card i {
+  color: #0b6b3a;
 }
 
-/* 內容容器 */
-.fs-hero-content {
-  position: relative;
-  z-index: 2; /* 確保內容在遮罩上方 */
-  padding: 0 20px;
+.card h3 {
+  margin-top: 12px;
 }
 
-/* 標題樣式 (一起為永續生活努力) */
-.fs-title {
-  font-size: 3rem; /* 較大的字體 */
-  color: white;
-  margin-bottom: 30px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 文字陰影，增加清晰度 */
-  font-weight: bold;
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
-/* 按鈕樣式 (了解更多) */
-.fs-button {
+.card-btn {
   display: inline-block;
-  padding: 15px 40px;
-  background-color: #27ae60; /* 綠色 */
-  color: white;
+  margin-top: 12px;
+  background: #0b6b3a; 
+  color: #fff;
   text-decoration: none;
-  font-size: 1.2rem;
-  border-radius: 30px; /* 圓角 */
-  transition: background-color 0.3s, transform 0.2s; /* 滑過時的過渡動畫 */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  font-weight: bold;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
 }
 
-.fs-button:hover {
-  background-color: #1e8449; /* 滑過時變深色 */
-  transform: translateY(-2px); /* 向上微調 */
+.card-btn:hover {
+  background: #09562f;
 }
-
-/* ==============================
-   Scroll Down Intro
-   (原本的 hero 內容修改)
-   ============================== */
-.scroll-down-intro {
-  padding: 80px 0; /* 提供適當的上下間距 */
-  background-color: #f9f9f9; /* 淺灰色背景 */
-  text-align: center;
-}
-
-.scroll-down-intro h1 {
-  font-size: 2.5rem;
-  color: #0b6b3a; /* 主綠色 */
-  margin-bottom: 10px;
-}
-
-.scroll-down-intro h2 {
-  font-size: 1.5rem;
-  color: #555;
-  font-weight: normal;
-}
-
-/* 如果你的 navbar 需要固定在上方，可以考慮加上這個 */
-/* .navbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-*/
 
 /* Calculator 碳排放計算機 */
 .calculator {
@@ -331,3 +304,4 @@ footer .social a:hover { color: #f39c12; }
   border-radius: 8px; /* 加上一點圓角 */
   box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* 加上淡淡的陰影讓圖片浮現出來 */
 }
+
